@@ -1,22 +1,22 @@
 ---
 
-# 3rd-Party Software for [https://github.com/mercenaries-ai/omni-core-viewers.git]()
+# 3rd-Party Software for [https://github.com/omnitool-ai/omni-core-viewers.git]()
 
 
 
-The following 3rd-party software packages may be used by or distributed with **https://github.com/mercenaries-ai/omni-core-viewers.git**.  Any information relevant to third-party vendors listed below are collected using common, reasonable means.
+The following 3rd-party software packages may be used by or distributed with **https://github.com/omnitool-ai/omni-core-viewers.git**.  Any information relevant to third-party vendors listed below are collected using common, reasonable means.
 
 
 Date generated | Revision ID
 :------------: | :----------:
-10/20/23 | 87bc70ecda09483095ee3071644ac89d618bce96
+10/20/23 | e958e4ef92ade92a8b60321b79370587b38b62ac
 
 ---
 
 
 ## Declared License
 
-No declared license found for https://github.com/mercenaries-ai/omni-core-viewers.git
+No declared license found for https://github.com/omnitool-ai/omni-core-viewers.git
 
 
 
