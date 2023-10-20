@@ -1,0 +1,52 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './vars.scss';
+@import './markdown.scss';
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  &-thumb {
+    background: #888;
+    border-radius: 10px;
+    &:hover {
+      background: #555;
+    }
+  }
+  &-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+}
+.banner
+{
+  background-color: #eee;
+  width: 105%;
+  color: white;
+  font-weight: 500;
+
+  display: flex;
+  border: 1px inset black;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: inset -1px -1px gray, inset 1px 1px #dfdfdf, inset -2px -2px #ddd;
+  min-height: 50px;
+  justify-content: center;
+  place-items: center;
+  background: linear-gradient(90deg, gray 22%, #ccc 100%);
+  text-shadow: 1px 1px 1px black;
+  margin-left: -10px;
+  margin-right: -10px;
+}

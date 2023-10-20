@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+   <link rel="stylesheet" href="./main.css" />
+   <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+    <style>
+      .html,
+      .body {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        min-height: 400px;
+        min-width: 1600px;
+        font-family: 'Arial';
+        font-size: 12px;
+        box-shadow: none;
+      }
+
+      h3 {
+        font-size: 22px !important;
+      }
+
+      button,
+      p,
+      label,
+      input[type="text"],
+      .field-row-stacked,
+      textarea {
+        font-family: 'Arial';
+        font-size: 14px;
+      }
+
+
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 45px;
+      }
+
+      @media (max-width: 767px) {
+        .markdown-body {
+          padding: 15px;
+        }
+      }
+
+
+
+      @media print {
+
+        header,
+        footer,
+        aside,
+        form,
+        #toolbar {
+          display: none;
+        }
+
+        .markdown-body {
+          width: 100% !important;
+          padding: 5px 5px 5px 5px !important;
+          margin: 10px 10px 10px 10px !important;
+        }
+      }
+      ::-webkit-progress-value {
+  transition: width 1s;
+}
+      .status-bar-field
+      {
+        font-family: Arial, Helvetica, sans-serif !important;
+      }
+      .xwindow {
+        font-size: 12px;
+       /* box-shadow: inset -1px -1px grey, inset 1px 1px #dfdfdf,
+          inset -2px -2px grey;*/
+        background: #cecece;
+
+        padding: 1px;
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        padding: 0 0 3px;
+        -webkit-font-smoothing: antialiased;
+
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+    </style>
+    <script src="./main.js" type="module" defer></script>
+
+  </head>
+
+  <body class="xwindow" x-data="appState">
+    <div class="flex flex-col w-full h-full">
+      <div class="window-body " >
+        <div id='content' x-html="html" x-data="createContent()" class="">
+        </div>
+
+      </div>
+
+    </div>
+    <div class="flex-grow   relative inline-flex h-6 py-0.5 ml-4 focus:outline-none rounded-full w-10"></div>
+
+  <div class="status-bar" style="position: fixed; bottom: 0px; width:100%;">
+    <p class="status-bar-field">Press F1 for help</p>
+    <p class="status-bar-field">Slide 1</p>
+    <p class="status-bar-field">
+      <span aria-busy="busy" aria-describedby="progress-bar" class="hidden"> </span>
+      <progress x-show="busy" id="progress-bar" aria-label="Content loading…"></progress></p>
+  </div>
+  </body>
+
+</html>
