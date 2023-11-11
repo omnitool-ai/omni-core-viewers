@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Editor and Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script async type="module">
+        window._item =''
+        const boot = async () =>
+        {
+        const args = new URLSearchParams(location.search)
+        let rawText = ''
+        const params = JSON.parse(args.get('q'))
+
+          if (params.file && params.file.fid)
+          {
+            let x = await fetch('/fid/'+params.file.fid)
+            rawText = await x.text()
+          }
+          else if (params.url)
+          {
+              let x = await fetch(params.url)
+              rawText = await x.text()
+          }
+          else if (param.data)
+          {
+              rawText = param.data
+          }
+          else if (param.text)
+          {
+              rawText = param.text
+          }
+          window._item = rawText || ''
+
+        }
+
+      function updatePreview() {
+        const sourceCode = window._item //document.getElementById('sourceCode').contentWindow.document;
+        const previewFrame = document.getElementById('previewFrame');
+        try {
+          const code = window._item; //sourceCode.getValue(); // Assuming the sourceCode iframe has a getValue method to get the code
+          previewFrame.srcdoc = code
+        } catch (error) {
+          console.error('Error updating preview:', error);
+        }
+      }
+
+      window.onload = async function () {
+        try{
+          await boot()
+          updatePreview();
+        }
+        catch(ex)
+        {
+          previewFrame.srcdoc = "Error"     + JSON.stringify(ex, null, 2)
+        }
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="flex flex-col md:flex-row h-screen bg-black">
+      <div class="flex-1">
+        <iframe id="previewFrame" class="w-full h-full" sandbox="allow-scripts"></iframe>
+      </div>
+    </div>
+  </body>
+</html>
