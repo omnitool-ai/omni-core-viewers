@@ -1,5 +1,5 @@
 title: Core Viewer and Editors
-version: 0.0.1
+version: 0.0.2
 description: Viewers / Editors for common file types.
 author: Omnitool.ai Team
 origin: https://github.com/omnitool-ai/omni-core-viewers.git
@@ -25,4 +25,8 @@ client:
 
       'text/html':
         page: html
+        opts: {}
+
+      'application/javascript':
+        page: markdown
         opts: {}
